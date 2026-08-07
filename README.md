@@ -8,12 +8,11 @@ PLURAD, Venice Raeka [S25B] RAMIREZ, Diana Angela [S25B]
 
 QueryPerformanceCounter was used to time the assembly kernel only (imgCvtGrayFloatToInt), averaging over 30 runs per size and excluding I/O and memory allocation:
 
-| Image Size | Pixels | Avg Time |   | Fastest (ms) Slowest (ms) Time / Pixel |   |
-| --- | --- | --- | --- | --- | --- |
-|   |   | (ms) |   |   | (ns) |
-| 10 x 10 | 100 | 0.000090 | 0.000000 | 0.000200 | 0.900000 |
-| 100 x 100 | 10000 | 0.004873 | 0.003500 | 0.044100 | 0.487 |
-| 1000 x 1000 1000000 |   | 0.426397 | 0.350800 | 2.150000 | 0.426 |
+| Image Size  | Pixels  | Avg Time (ms) | Fastest (ms) | Slowest (ms) | Time / Pixel (ns) |
+| ----------- | ------- | ------------- | ------------ | ------------ | ----------------- |
+| 10 x 10     | 100     | 0.000090      | 0.000000     | 0.000200     | 0.900000          |
+| 100 x 100   | 10000   | 0.004873      | 0.003500     | 0.044100     | 0.487             |
+| 1000 x 1000 | 1000000 | 0.426397      | 0.350800     | 2.150000     | 0.426             |
 
 *Table 1. Execution time of the assembly kernel across input sizes (n = 30 trials per size)*
 
@@ -26,7 +25,9 @@ The timing results were checked independently for correctness. The results for t
 
 #Screenshot of the program output with the correctness check
 <img width="483" height="428" alt="Screenshot 2026-08-07 160736" src="https://github.com/user-attachments/assets/f9191267-3bcd-4c03-a799-3e045dd7bf11" />
+
 *Figure 1. Manual Image Entry and Correctness Verification*
 
 <img width="556" height="589" alt="Screenshot 2026-08-07 160752" src="https://github.com/user-attachments/assets/3dc97b69-a5a4-4afa-91ea-74729b6f85e7" />
+
 *Figure 2. Performance Test Results — 10×10, 100×100, and 1000×1000 (30 Runs Each)*
