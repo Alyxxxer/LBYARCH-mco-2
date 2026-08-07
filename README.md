@@ -1,10 +1,10 @@
-## x86-to-C Interface Programming Project
+# x86-to-C Interface Programming Project
 
 Submitted by:
 
 PLURAD, Venice Raeka [S25B] RAMIREZ, Diana Angela [S25B]
 
-# Average execution time and short analysis of the performance
+## Average execution time and short analysis of the performance
 
 QueryPerformanceCounter was used to time the assembly kernel only (imgCvtGrayFloatToInt), averaging over 30 runs per size and excluding I/O and memory allocation:
 
@@ -23,7 +23,7 @@ However, this was not the case with the normalized time per pixel metric. It was
 The timing results were checked independently for correctness. The results for the three image sizes tested are compared element-wise with a reference implementation in C, with the same conversion formula. In all three trials, there was 100% match for all pixels, which means that any observed differences in execution times are only characteristic of the performance of the trials, and not from computational errors in the implementation of the assemblies.
 
 
-#Screenshot of the program output with the correctness check
+## Screenshot of the program output with the correctness check
 <img width="483" height="428" alt="Screenshot 2026-08-07 160736" src="https://github.com/user-attachments/assets/f9191267-3bcd-4c03-a799-3e045dd7bf11" />
 
 *Figure 1. Manual Image Entry and Correctness Verification*
