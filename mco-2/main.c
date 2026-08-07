@@ -17,8 +17,6 @@ static void refCvtGrayFloatToInt(int height, int width,
         iImg[k] = (unsigned char)nearbyintf(fImg[k] * 255.0f);
 }
 
-/* helpers */
-
 static void printFloatImage(int height, int width, const float* img)
 {
     int r, c;
@@ -41,7 +39,6 @@ static void printIntImage(int height, int width, const unsigned char* img)
     }
 }
 
-/* Returns number of mismatching pixels between asm result and C reference. */
 static long long checkCorrectness(int height, int width, const float* fImg,
     const unsigned char* asmOut, int verbose)
 {
@@ -66,8 +63,6 @@ static long long checkCorrectness(int height, int width, const float* fImg,
         n - bad, n, (bad == 0) ? "PASSED" : "FAILED");
     return bad;
 }
-
-/* manual input */
 
 static void runManual(void)
 {
@@ -98,9 +93,7 @@ static void runManual(void)
 
     imgCvtGrayFloatToInt(height, width, in, out);
 
-    printf("\nInput (float):\n");
-    printFloatImage(height, width, in);
-    printf("\nOutput (uint8):\n");
+    printf("\nOutput:\n");
     printIntImage(height, width, out);
     printf("\n");
     checkCorrectness(height, width, in, out, 1);
@@ -108,8 +101,6 @@ static void runManual(void)
     free(in);
     free(out);
 }
-
-/* performance test */
 
 static void benchmarkOne(int height, int width, int runs)
 {
@@ -129,11 +120,11 @@ static void benchmarkOne(int height, int width, int runs)
     }
 
     for (k = 0; k < n; k++)
-        in[k] = (float)rand() / (float)RAND_MAX;   /* random pixels in [0,1] */
+        in[k] = (float)rand() / (float)RAND_MAX;  
 
     QueryPerformanceFrequency(&freq);
 
-    imgCvtGrayFloatToInt(height, width, in, out);  /* warm-up, not timed */
+    imgCvtGrayFloatToInt(height, width, in, out);  
 
     for (r = 0; r < runs; r++) {
         QueryPerformanceCounter(&t0);
@@ -167,13 +158,11 @@ static void runBenchmark(void)
     printf("\n");
 }
 
-/* main */
-
 int main(void)
 {
     int choice = 0;
 
-    srand(12345);   /* fixed seed for reproducible benchmark data */
+    srand(12345);   
 
     for (;;) {
         printf("=========================================\n");
