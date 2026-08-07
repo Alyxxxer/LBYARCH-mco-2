@@ -17,17 +17,6 @@ static void refCvtGrayFloatToInt(int height, int width,
         iImg[k] = (unsigned char)nearbyintf(fImg[k] * 255.0f);
 }
 
-static void printFloatImage(int height, int width, const float* img)
-{
-    int r, c;
-    for (r = 0; r < height; r++) {
-        for (c = 0; c < width; c++)
-            printf("%.2f%s", img[(long long)r * width + c],
-                (c == width - 1) ? "" : ", ");
-        printf("\n");
-    }
-}
-
 static void printIntImage(int height, int width, const unsigned char* img)
 {
     int r, c;
