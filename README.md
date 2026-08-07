@@ -2,7 +2,8 @@
 
 Submitted by:
 
-PLURAD, Venice Raeka [S25B] RAMIREZ, Diana Angela [S25B]
+- PLURAD, Venice Raeka [S25B] 
+- RAMIREZ, Diana Angela [S25B]
 
 ## Average execution time and short analysis of the performance
 
